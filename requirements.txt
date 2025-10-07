@@ -8,3 +8,4 @@ twilio
 email-validator
 requests
 PyJWT
+python-multipart
