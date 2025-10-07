@@ -14,8 +14,8 @@ class EmailOTPService(IOTPService):
     def __init__(self):
         self.smtp_server = os.getenv("SMTP_SERVER", "smtp.gmail.com")
         self.smtp_port = int(os.getenv("SMTP_PORT", 465))
-        self.sender_email = os.getenv("SENDER_EMAIL")
-        self.sender_password = os.getenv("SENDER_PASSWORD")
+        self.sender_email = os.getenv("SENDER_EMAIL","vyokesh344@gmail.com")
+        self.sender_password = os.getenv("SENDER_PASSWORD","bpcjzxczvkscjmbd")
 
     def send_otp(self, email: str) -> str:
         otp = str(random.randint(100000, 999999))
