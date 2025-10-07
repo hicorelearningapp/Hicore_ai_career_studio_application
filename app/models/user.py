@@ -18,8 +18,12 @@ class User(Base):
     email = Column(String, unique=True, nullable=True)
     phone = Column(String, unique=True, nullable=True)
 
-    # one-to-one relationships
+    # One-to-one relationships
     student_profile = relationship("Student", back_populates="user", uselist=False)
     jobseeker_profile = relationship("JobSeeker", back_populates="user", uselist=False)
     mentor_profile = relationship("Mentor", back_populates="user", uselist=False)
     employee_profile = relationship("Employee", back_populates="user", uselist=False)
+
+    # Profile for general information
+    profile = relationship("Profile", back_populates="user", uselist=False)
+
